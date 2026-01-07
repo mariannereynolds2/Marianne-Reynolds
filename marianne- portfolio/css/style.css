@@ -1,0 +1,271 @@
+:root {
+    --primary-color: #e91e63;
+    --secondary-color: #ffb6c1;
+    --accent-color: #880e4f;
+    --bg-color: #fff0f5;
+    --font-main: Georgia, serif;
+}
+
+/* Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: var(--primary-color); transition: all 0.3s ease; }
+a:hover { color: var(--accent-color); }
+
+h1, h2, h3 { color: var(--accent-color); }
+
+html { scroll-behavior: smooth; }
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 30px; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.logo { font-size: 1.8rem; font-weight: bold; color: white; }
+.main-menu { list-style: none; display: flex; gap: 20px; }
+.main-menu li a { color: white; font-weight: bold; }
+.main-menu li a:hover { color: var(--secondary-color); }
+
+/* Hero */
+.hero {
+    display: flex; align-items: center; justify-content: center;
+    padding: 80px 20px; background: linear-gradient(120deg, var(--secondary-color), var(--bg-color));
+}
+.hero-content {
+    display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+}
+.hero-text { max-width: 500px; text-align: left; animation: fadeInLeft 1s ease forwards; opacity: 0; }
+.hero-text h1 { font-size: 2.8rem; margin-bottom: 20px; }
+.hero-text p { font-size: 1.2rem; margin-bottom: 30px; }
+.hero-buttons a { margin-right: 15px; padding: 15px 25px; border-radius: 50px; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease; }
+.hero-buttons a.cta-button { background-color: var(--primary-color); color: white; }
+.hero-buttons a.cta-button:hover { transform: scale(1.05); background-color: var(--accent-color); }
+.hero-buttons a.secondary { background-color: var(--secondary-color); color: var(--accent-color); }
+.hero-buttons a.secondary:hover { background-color: #ffc1dc; }
+.hero-image img { width: 250px; border-radius: 50%; border: 4px solid var(--primary-color); animation: fadeInRight 1s ease forwards; opacity: 0; }
+
+/* Services */
+.services-preview { text-align: center; padding: 60px 20px; }
+.services-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.card { background-color: white; padding: 25px; width: 250px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+/* Testimonials */
+.testimonials-preview { background-color: #ffe4e1; padding: 60px 20px; text-align: center; }
+.testimonial-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.testimonial { background-color: white; padding: 20px; width: 300px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+.testimonial p { font-style: italic; margin-bottom: 15px; }
+.testimonial span { font-weight: bold; color: var(--primary-color); }
+
+/* CTA */
+.cta-section { padding: 60px 20px; text-align: center; background: var(--bg-color); }
+.cta-section a.cta-button { background-color: var(--primary-color); color: white; }
+
+/* Footer */
+footer { background-color: var(--accent-color); color: white; text-align: center; padding: 20px; }
+.footer-menu a { color: white; margin: 0 10px; }
+
+/* Popup */
+.popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 2000; }
+.popup-content { background-color: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative; }
+.popup-content input, .popup-content textarea { width: 80%; padding: 12px; margin-bottom: 15px; border-radius: 50px; border: 1px solid var(--primary-color); }
+.popup-content button { padding: 12px 25px; border: none; border-radius: 50px; background-color: var(--primary-color); color: white; font-weight: bold; cursor: pointer; }
+.popup-content button:hover { background-color: var(--accent-color); }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: var(--accent-color); }
+
+/* Animations */
+@keyframes fadeInLeft {0% {opacity:0; transform: translateX(-50px);} 100% {opacity:1; transform: translateX(0);}}
+@keyframes fadeInRight {0% {opacity:0; transform: translateX(50px);} 100% {opacity:1; transform: translateX(0);}}
+
+@media screen and (max-width: 768px) { .hero-content { flex-direction: column; text-align: center; } .hero-text { text-align: center; } }
+
+/* About Hero Section Specific */
+.about-hero .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.about-hero .hero-text {
+    max-width: 500px;
+    text-align: left;
+    animation: fadeInLeft 1s ease forwards;
+    opacity: 0;
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: left;
+}
+
+.about-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.about-section p, .about-section ul {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.about-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .about-hero .hero-content { flex-direction: column; text-align: center; }
+    .about-hero .hero-text { text-align: center; }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 25px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-card span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.more-info {
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+.more-info a {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Contact Page Styling (match theme) */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px; /* same as service/testimonial cards */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* same shadow as services */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.contact-card h2 {
+    color: #ff1493; /* hot pink same as other pages */
+    margin-bottom: 20px;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    padding: 12px 15px;
+    border-radius: 15px;
+    border: 1px solid #ff69b4; /* pink border like other cards */
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255,105,180,0.3);
+    outline: none;
+    border-color: #ff1493;
+}
+
+.contact-card .cta-button {
+    background-color: #ff69b4; /* primary pink */
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-card .cta-button:hover {
+    background-color: #ff1493; /* accent pink */
+    transform: scale(1.03);
+}
+
+.contact-note {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.contact-note a {
+    color: #ff1493;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-note a:hover {
+    color: #ff69b4;
+}
